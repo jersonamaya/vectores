@@ -8,10 +8,12 @@ using std:: time;
 #include<cstdlib>
 using std::rand;
 using std::srand;
-
+#include<cmath>
 class Vector{
 friend Vector &operator +(const Vector &,const Vector &);
 friend Vector &operator -(const Vector&, const Vector &);
+friend double operator ~(const Vector&);
+friend double operator *=(const Vector&,const Vector&);
 friend ostream &operator <<(ostream &,const Vector&);
 public:  Vector(const int);
 

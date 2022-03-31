@@ -9,7 +9,7 @@ using std:: time;
 #include<cstdlib>
 using std::rand;
 using std::srand;
-
+#include<cmath>
 
 Vector::Vector(const int midim){
 	this->dim=midim;
@@ -43,9 +43,9 @@ return this->dim;
 
 }
 
-ostream &operator <<(ostream &mensaje,const Vector &vectores){
+ostream &operator <<(ostream &mensaje,const Vector &vect){
 	
-	mensaje<<vectores<<endl;
+	mensaje<<vect.getdim()<<endl;
 	
 	return mensaje;
 	
@@ -84,3 +84,37 @@ for(int i=0;i<vect1.getdim();i++){
 	
 	
 }
+
+double operator ~(const Vector &v1){
+	double modulo;
+	double suma=0;
+	for(int i=0;i<v1.getdim();i++){
+	
+	
+     suma+=v1.vectores[i]*v1.vectores[i];;
+	 
+}
+     modulo=sqrt(suma);
+	return modulo;
+
+}
+
+double operator *=(const Vector&v1,const Vector&v2){//producto escalar//
+	
+	
+	double esc=0;
+	for(int i=0;i<v1.getdim();i++){
+	
+	
+     esc+=v1.vectores[i]*v2.vectores[i];
+	 
+}
+    
+	return esc;
+
+	
+	
+}
+
+
+
