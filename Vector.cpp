@@ -116,5 +116,22 @@ double operator *=(const Vector&v1,const Vector&v2){//producto escalar//
 	
 }
 
-
-
+Vector &operator ^=(const Vector&v1, const Vector &v2){
+	
+	
+Vector *vec= new Vector(v1.getdim());
+for(int i=0;i<v1.getdim();i++){
+ 
+ vec->vectores[0]=v1.vectores[1]*v2.vectores[2]-v1.vectores[2]*v2.vectores[1];
+  vec->vectores[1]=v1.vectores[0]*v2.vectores[2]-v1.vectores[2]*v2.vectores[0];
+   vec->vectores[1]*=-1;
+   vec->vectores[2]=v1.vectores[0]*v2.vectores[1]-v1.vectores[1]*v2.vectores[0];
+}
+    return *vec;
+	
+	
+	
+	
+	
+	
+}
